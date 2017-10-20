@@ -55,7 +55,10 @@ public class Convert {
 	    		try (BufferedReader br = new BufferedReader(new FileReader(file))) 
 	    		{
 	    			File pdfFile = new File(folderDest+"\\", fileName+".pdf");
-	    			
+	    			if(!pdfFile.exists())
+	    			{
+	    				pdfFile.createNewFile();
+	    			}
     				StringBuffer sourceCOde = new StringBuffer();
 			        String line;
 	    		    while ((line = br.readLine()) != null) 
